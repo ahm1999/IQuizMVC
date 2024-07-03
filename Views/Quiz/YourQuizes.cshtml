@@ -1,0 +1,12 @@
+﻿@model List<Quiz>
+
+@foreach (var quiz in Model)
+{
+    <a href="/Quiz/play/@quiz.Id">
+        <div>
+            @quiz.Title <br />
+            @quiz.Description <br />
+        </div>
+    </a>
+    <br />
+}

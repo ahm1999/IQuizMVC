@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<Quiz>
+
+@foreach (var quiz in Model)
+{
+<a href="/Quiz/play/@quiz.Id">
+        <div>
+            @quiz.Title <br />
+            @quiz.Description <br />
+        </div>
+</a>
+ <br />
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>

@@ -1,0 +1,35 @@
+﻿@model Quiz;
+
+
+
+<div class="container">
+
+    @foreach (var question in Model.Questions)
+    {
+        
+
+        var id = question.Id.ToString();
+
+
+        <div id="@id" class="questionContainer">
+
+            the quesiton: @question.Content <br />
+            the Answer :  @question.Answer  <br />
+            
+            <button onclick="deleteQuestion('@id')" >delete</button>
+        </div>
+    }
+
+</div>
+
+<div>
+    <form action="/Quiz/AddQuestion/@Model.Id" method="post">
+        <label for="Content">Content</label>
+        <input type="text" id="Content" name="Content"/>
+
+        <label for="Answer">Answer</label>
+        <input type="text" id="Answer" name="Answer" />
+        
+        <button type="submit" >addQuestion</button>
+    </form>
+</div>
